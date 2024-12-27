@@ -2,7 +2,7 @@ import json
 import numpy as np
 
 def lambda_handler(event, context):
-    matrix_list = eval(context)['matrix']
+    matrix_list = eval(event)['matrix']
     matrix = npa = np.asarray(matrix_list, dtype=np.float32)
     eigen_values, eigen_vectors = np.linalg.eig(matrix)
     eigen_values_list = eigen_values.tolist()
