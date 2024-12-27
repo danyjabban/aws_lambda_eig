@@ -19,7 +19,7 @@ def lambda_handler(event, context):
         eigen_values_list = eigen_values.tolist()
         eigen_vectors_list = eigen_vectors.tolist()
 
-        table.put_item(Item = {'messageId':f"{matrix_list}", 'eigen_values':eigen_values_list})
+        table.put_item(Item = {'messageId':f"{matrix_list}", 'eigen_values':f"{eigen_values_list}"})
 
     return {
         'statusCode': 200,
